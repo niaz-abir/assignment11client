@@ -5,7 +5,7 @@ const Blog = () => {
     <div>
       <h1>Our Blog Question</h1>
       <div>
-        <h1>What is Different between Sql and NoSql?</h1>
+        <h2>What is Different between Sql and NoSql?</h2>
         <p>
           Structured Query language (SQL) pronounced as “S-Q-L” or sometimes as
           “See-Quel” is the standard language for dealing with Relational
@@ -22,6 +22,21 @@ const Blog = () => {
           NoSQL database system encompasses a wide range of database
           technologies that can store structured, semi-structured, unstructured
           and polymorphic data.
+        </p>
+      </div>
+      <div>
+        <h2>What is Jwt? and how does it work?</h2>
+        <p>
+          jWT, or JSON Web Token, is an open standard used to share security
+          information between two parties — a client and a server. Each JWT
+          contains encoded JSON objects, including a set of claims. JWTs are
+          signed using a cryptographic algorithm to ensure that the claims
+          cannot be altered after the token is issued.jwt offers er from other
+          web tokens in that they contain a set of claims. Claims are used to
+          transmit information between two parties. What these claims are
+          depends on the use case at hand. For example, a claim may assert who
+          issued the token, how long it is valid for, or what permissions the
+          client has been granted.
         </p>
       </div>
     </div>
