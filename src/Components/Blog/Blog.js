@@ -2,17 +2,19 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div>
-      <h1>Our Blog Question</h1>
-      <div>
-        <h2>What is Different between Sql and NoSql?</h2>
+    <div className="ml-8 mt-5">
+      <h1 className="text-4xl text-center mb-6 font-bold">Our Blog Question</h1>
+      <div className="mb-6 w-3/4 ">
+        <h2 className="mb-6 text-2xl font-semibold">
+          Q1: What is Different between Sql and NoSql?
+        </h2>
         <p>
-          Structured Query language (SQL) pronounced as “S-Q-L” or sometimes as
-          “See-Quel” is the standard language for dealing with Relational
-          Databases. A relational database defines relationships in the form of
-          tables. SQL programming can be effectively used to insert, search,
-          update, delete database records. That doesn’t mean SQL cannot do
-          things beyond that. NoSQL is a non-relational DMS, that does not
+          Ans: Structured Query language (SQL) pronounced as “S-Q-L” or
+          sometimes as “See-Quel” is the standard language for dealing with
+          Relational Databases. A relational database defines relationships in
+          the form of tables. SQL programming can be effectively used to insert,
+          search, update, delete database records. That doesn’t mean SQL cannot
+          do things beyond that. NoSQL is a non-relational DMS, that does not
           require a fixed schema, avoids joins, and is easy to scale. NoSQL
           database is used for distributed data stores with humongous data
           storage needs. NoSQL is used for Big data and real-time web apps. For
@@ -24,8 +26,10 @@ const Blog = () => {
           and polymorphic data.
         </p>
       </div>
-      <div>
-        <h2>What is Jwt? and how does it work?</h2>
+      <div className="mb-6 w-3/4">
+        <h2 className="mb-6 text-2xl font-semibold">
+          Q2: What is Jwt? and how does it work?
+        </h2>
         <p>
           jWT, or JSON Web Token, is an open standard used to share security
           information between two parties — a client and a server. Each JWT
@@ -39,8 +43,10 @@ const Blog = () => {
           client has been granted.
         </p>
       </div>
-      <div>
-        <h2>What is the Different between javascript and nodejs?</h2>
+      <div className="mb-6 w-3/4">
+        <h2 className="mb-6 text-2xl font-semibold">
+          Q3 :What is the Different between javascript and nodejs?
+        </h2>
         <p>
           Ans: Javascript is a simple object-oriented programming language for
           building interactive HTML pages. JavaScript is also commonly used in
@@ -57,10 +63,12 @@ const Blog = () => {
           non-blocking (asynchronous) I/O.
         </p>
       </div>
-      <div>
-        <h2>How does Nodejs handle multiple request at the same time?</h2>
+      <div className="mb-6 w-3/4">
+        <h2 className="Mb-6 text-2xl font-semibold">
+          Q4: How does Nodejs handle multiple request at the same time?
+        </h2>
         <p>
-          Given a NodeJS application, since Node is single threaded, say if
+          Ans: Given a NodeJS application, since Node is single threaded, say if
           processing involves a Promise.all that takes 8 seconds, does this mean
           that the client request that comes after this request would need to
           wait for eight seconds? No. NodeJS event loop is single threaded. The
