@@ -39,6 +39,24 @@ const Blog = () => {
           client has been granted.
         </p>
       </div>
+      <div>
+        <h2>What is the Different between javascript and nodejs</h2>
+        <p>
+          Ans: Javascript is a simple object-oriented programming language for
+          building interactive HTML pages. JavaScript is also commonly used in
+          the development of games and mobile applications. The program can only
+          be executed and run in an internet browser because it is interpreted
+          as scripting. To run and execute the code outside the browser, we can
+          utilize Node.js. For executing JavaScript on the server, Node.js is a
+          bridge, open-source Js runtime environment. JavaScript code can now
+          execute outside of the browser, thanks to Node.js. Node.js has many
+          components and is primarily used for web development. It may run on
+          various operating systems, including Windows, Linux, and Mac OS. It
+          provides a cross-platform runtime environment for developing highly
+          scalable server-side JavaScript applications with event-driven,
+          non-blocking (asynchronous) I/O.
+        </p>
+      </div>
     </div>
   );
 };
