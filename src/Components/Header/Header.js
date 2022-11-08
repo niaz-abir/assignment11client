@@ -45,11 +45,13 @@ const Header = () => {
             <Link className="mr-2" to="/blog">
               Blog
             </Link>
-            <Link to="/login">login</Link>
-            <Link to="/register">Register</Link>
-            <button onClick={handlelogout} className="btn btn-primary">
-              Logout
-            </button>
+            <Link className="mr-2" to="/login">
+              login
+            </Link>
+            <Link className="mr-2" to="/register">
+              Register
+            </Link>
+            <button onClick={handlelogout}>Logout</button>
           </ul>
         </div>
         <div className="navbar-end">
