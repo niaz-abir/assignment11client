@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Singleservice from "../Singleservice/Singleservice";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const [services, setservices] = useState([]);
@@ -17,7 +18,9 @@ const Services = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <button className="btn btn-primary">See All</button>
+        <Link to="/services">
+          <button className="btn btn-primary">See All</button>
+        </Link>
       </div>
     </div>
   );
