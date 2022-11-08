@@ -40,7 +40,7 @@ const Blog = () => {
         </p>
       </div>
       <div>
-        <h2>What is the Different between javascript and nodejs</h2>
+        <h2>What is the Different between javascript and nodejs?</h2>
         <p>
           Ans: Javascript is a simple object-oriented programming language for
           building interactive HTML pages. JavaScript is also commonly used in
@@ -55,6 +55,25 @@ const Blog = () => {
           provides a cross-platform runtime environment for developing highly
           scalable server-side JavaScript applications with event-driven,
           non-blocking (asynchronous) I/O.
+        </p>
+      </div>
+      <div>
+        <h2>How does Nodejs handle multiple request at the same time?</h2>
+        <p>
+          Given a NodeJS application, since Node is single threaded, say if
+          processing involves a Promise.all that takes 8 seconds, does this mean
+          that the client request that comes after this request would need to
+          wait for eight seconds? No. NodeJS event loop is single threaded. The
+          entire server architecture for NodeJS is not single threaded. Before
+          getting into the Node server architecture, to take a look at typical
+          multithreaded request response model, the web server would have
+          multiple threads and when concurrent requests get to the webserver,
+          the webserver picks threadOne from the threadPool and threadOne
+          processes requestOne and responds to clientOne and when the second
+          request comes in, the web server picks up the second thread from the
+          threadPool and picks up requestTwo and processes it and responds to
+          clientTwo. threadOne is responsible for all kinds of operations that
+          requestOne demanded including doing any blocking IO operations.
         </p>
       </div>
     </div>
