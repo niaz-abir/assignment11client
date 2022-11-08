@@ -6,7 +6,7 @@ const Services = () => {
   const [services, setservices] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("http://localhost:5000/services?limit=3")
       .then((res) => res.json())
       .then((data) => setservices(data));
   }, []);
@@ -18,7 +18,7 @@ const Services = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <Link to="/services">
+        <Link to="/allservice">
           <button className="btn btn-primary">See All</button>
         </Link>
       </div>

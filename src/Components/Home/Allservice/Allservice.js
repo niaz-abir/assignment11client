@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Singleallservice from "../Singleallservice/Singleallservice";
+import Singleservice from "../Singleservice/Singleservice";
 
 const Allservice = () => {
   const [allservic, setallservic] = useState([]);
@@ -6,11 +8,18 @@ const Allservice = () => {
   useEffect(() => {
     fetch("http://localhost:5000/services")
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setallservic(data));
   }, []);
   return (
     <div>
-      <h1>Abir</h1>
+      <div className="grid grid-cols-3">
+        {allservic.map((singleservic) => (
+          <Singleallservice
+            singleservic={singleservic}
+            key={singleservic._id}
+          ></Singleallservice>
+        ))}
+      </div>
     </div>
   );
 };
