@@ -51,7 +51,12 @@ const Header = () => {
             <Link className="mr-2" to="/register">
               Register
             </Link>
-            <button onClick={handlelogout}>Logout</button>
+            <button className="mr-2" onClick={handlelogout}>
+              Logout
+            </button>
+            <Link className="mr-2" to="/allreview">
+              MyReview
+            </Link>
           </ul>
         </div>
         <div className="navbar-end">
