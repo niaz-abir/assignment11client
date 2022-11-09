@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Allreview from "../../Components/Allreview/Allreview";
 import Blog from "../../Components/Blog/Blog";
+import Edite from "../../Components/Edit/Edite";
 import Allservice from "../../Components/Home/Allservice/Allservice";
 import Amount from "../../Components/Home/Amount/Amount";
 import Home from "../../Components/Home/Home/Home";
 import Services from "../../Components/Home/Services/Services";
+import Studio from "../../Components/Home/Studio/Studio";
 import Login from "../../Components/Login/Login";
 import Register from "../../Components/Register/Register";
 import Reviews from "../../Components/Reviews/Reviews";
@@ -24,6 +26,7 @@ export const routes = createBrowserRouter([
       { path: "/blog", element: <Blog></Blog> },
       { path: "/login", element: <Login></Login> },
       { path: "/register", element: <Register></Register> },
+      { path: "/studio", element: <Studio></Studio> },
 
       {
         path: "/servicedetails/:id",
@@ -37,6 +40,12 @@ export const routes = createBrowserRouter([
         element: <Allreview></Allreview>,
         // loader: fetch("http://localhost:5000/reviews"),
       },
+      //   {
+      //     path: "/edit/:id",
+      //     element: <Edite></Edite>,
+      //     loader: ({ params }) =>
+      //       fetch(`http://localhost:5000/reviews/${params.id}`),
+      //   },
     ],
   },
 ]);

@@ -12,7 +12,7 @@ const Services = () => {
   }, []);
   return (
     <div>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-1 lg:grid-cols-3">
         {services.map((servic) => (
           <Singleservice servic={servic} key={servic._id}></Singleservice>
         ))}

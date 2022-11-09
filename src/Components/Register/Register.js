@@ -28,7 +28,7 @@ const Register = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="flex mx-auto w-3/4">
+    <div className="flex mx-auto justify-center w-1/2 lg:w-1/2">
       <div className="w-3/4">
         <form onSubmit={handleregister} className="card-body">
           <div className="form-control">
@@ -69,11 +69,13 @@ const Register = () => {
               </a>
             </label>
           </div>
-          <div className="form-control mt-6 w-2/4 flex mx-auto">
-            <button className="btn btn-primary">Submit</button>
+          <div className="form-control mt-6 w-2/4 gap-4 flex mx-auto">
+            <button className="btn bg-purple-500 hover:bg-pink-500 border-0">
+              Submit
+            </button>
             <button
               onClick={handlewithgoogle}
-              className="btn btn-primary mt-4 "
+              className="btn bg-purple-500 hover:bg-pink-500 border-0"
             >
               Signwith google
             </button>

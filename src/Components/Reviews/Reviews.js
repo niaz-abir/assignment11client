@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Authcontext } from "../Context/Authprovide";
 
 const Reviews = ({ _id }) => {
+  const { user } = useContext(Authcontext);
   const handlereview = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -36,6 +38,7 @@ const Reviews = ({ _id }) => {
       <div className="hero  ">
         <div className="hero-content flex-col ">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
+            <img src={user?.photoURL} alt=""></img>
             <form onSubmit={handlereview} className="card-body">
               <div className="form-control">
                 <label className="label">

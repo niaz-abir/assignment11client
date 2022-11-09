@@ -13,7 +13,7 @@ const Header = () => {
   };
   return (
     <div>
-      <div className="navbar h-32  ">
+      <div className="navbar h-32 ml-6 mr-6 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -51,7 +51,7 @@ const Header = () => {
               </Link>
             </ul>
           </div>
-          <Link to="/" className=" text-amber-900 font-bold text-xl">
+          <Link to="/" className=" text-amber-900 font-bold text-2xl">
             Artsy Lens
           </Link>
         </div>
