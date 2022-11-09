@@ -29,9 +29,11 @@ const Reviewcard = ({ review }) => {
           <h2 className="card-title">{displareview.customer}</h2>
           <p>rating :{displareview.rating}</p>
           <p>message :{displareview.message}</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-outline">edit</button>
 
+          <div className="card-actions justify-end">
+            <Link to={`/edit/${displareview._id}`}>
+              <button className="btn btn-outline">edit</button>
+            </Link>
             <button
               onClick={() => handledelte(displareview._id)}
               className="btn btn-outline"

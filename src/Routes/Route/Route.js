@@ -40,12 +40,12 @@ export const routes = createBrowserRouter([
         element: <Allreview></Allreview>,
         // loader: fetch("http://localhost:5000/reviews"),
       },
-      //   {
-      //     path: "/edit/:id",
-      //     element: <Edite></Edite>,
-      //     loader: ({ params }) =>
-      //       fetch(`http://localhost:5000/reviews/${params.id}`),
-      //   },
+      {
+        path: "/edit/:id",
+        element: <Edite></Edite>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/reviews/${params.id}`),
+      },
     ],
   },
 ]);
