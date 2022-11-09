@@ -81,6 +81,12 @@ const Header = () => {
             >
               MyReview
             </Link>
+            <Link
+              className="mr-4 text-semibold text text-teal-800"
+              to="/addservice"
+            >
+              AddService
+            </Link>
           </ul>
         </div>
         <div className="navbar-end">
