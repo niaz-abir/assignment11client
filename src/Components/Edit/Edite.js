@@ -21,13 +21,16 @@ const Edite = () => {
       message,
     };
 
-    fetch(`http://localhost:5000/reviews/${storeuser._id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newreview),
-    })
+    fetch(
+      `https://assignment11-server-one.vercel.app/reviews/${storeuser._id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newreview),
+      }
+    )
       .then((res) => res.json())
       .then((data) => console.log(data));
   };

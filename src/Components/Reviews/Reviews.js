@@ -17,7 +17,7 @@ const Reviews = ({ _id }) => {
       rating,
       message,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://assignment11-server-one.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -35,10 +35,14 @@ const Reviews = ({ _id }) => {
   };
   return (
     <div>
+      <h1 className="text-3xl text-center font-mono text-pink-400">
+        Your Review...
+      </h1>
       <div className="hero  ">
         <div className="hero-content flex-col ">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
-            <img src={user?.photoURL} alt=""></img>
+            <img className="w-8 rounded-lg" src={user?.photoURL} alt=""></img>
+            <p>{user?.displayName}</p>
             <form onSubmit={handlereview} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -83,7 +87,9 @@ const Reviews = ({ _id }) => {
                   name="message"
                 ></textarea>
               </div>
-              <button className="btn btn-primary">submit</button>
+              <button className="btn bg-purple-500 hover:bg-pink-500 border-0">
+                submit
+              </button>
             </form>
           </div>
         </div>

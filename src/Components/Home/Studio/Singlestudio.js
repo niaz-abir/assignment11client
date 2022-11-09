@@ -1,9 +1,10 @@
 import React from "react";
+import "./Singlesudio.css";
 
 const Singlestudio = ({ studio }) => {
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-base-100 shadow-xl studio">
         <figure className="px-10 pt-10">
           <img src={studio.img} alt="Shoes" className="rounded-xl" />
         </figure>

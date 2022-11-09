@@ -4,7 +4,7 @@ const Blog = () => {
   return (
     <div className="ml-8 mt-5">
       <h1 className="text-4xl text-center mb-6 font-bold">Our Blog Question</h1>
-      <div className="mb-6 w-3/4 ">
+      <div className="mb-6 w-3/4 border-2 p-4 border-pink-400 ">
         <h2 className="mb-6 text-2xl font-semibold">
           Q1: What is Different between Sql and NoSql?
         </h2>
@@ -26,7 +26,7 @@ const Blog = () => {
           and polymorphic data.
         </p>
       </div>
-      <div className="mb-6 w-3/4">
+      <div className="mb-6 w-3/4 border-2 p-4 border-pink-400">
         <h2 className="mb-6 text-2xl font-semibold">
           Q2: What is Jwt? and how does it work?
         </h2>
@@ -43,7 +43,7 @@ const Blog = () => {
           client has been granted.
         </p>
       </div>
-      <div className="mb-6 w-3/4">
+      <div className="mb-6 w-3/4 border-2 p-4 border-pink-400">
         <h2 className="mb-6 text-2xl font-semibold">
           Q3 :What is the Different between javascript and nodejs?
         </h2>
@@ -63,7 +63,7 @@ const Blog = () => {
           non-blocking (asynchronous) I/O.
         </p>
       </div>
-      <div className="mb-6 w-3/4">
+      <div className="mb-6 w-3/4 border-2 p-4 border-pink-400">
         <h2 className="Mb-6 text-2xl font-semibold">
           Q4: How does Nodejs handle multiple request at the same time?
         </h2>

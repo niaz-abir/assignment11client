@@ -34,19 +34,23 @@ export const routes = createBrowserRouter([
         path: "/servicedetails/:id",
         element: <Servicedetails></Servicedetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(
+            `https://assignment11-server-one.vercel.app/services/${params.id}`
+          ),
       },
       { path: "/reviews", element: <Reviews></Reviews> },
       {
         path: "/allreview",
         element: <Allreview></Allreview>,
-        // loader: fetch("http://localhost:5000/reviews"),
+        // loader: fetch("https://assignment11-server-one.vercel.app/reviews"),
       },
       {
         path: "/edit/:id",
         element: <Edite></Edite>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews/${params.id}`),
+          fetch(
+            `https://assignment11-server-one.vercel.app/reviews/${params.id}`
+          ),
       },
     ],
   },

@@ -9,9 +9,12 @@ const Reviewcard = ({ review }) => {
   const handledelte = (_id) => {
     const agree = window.confirm("Are you sure you want delete it?");
     if (agree) {
-      fetch(`http://localhost:5000/reviews/${review._id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://assignment11-server-one.vercel.app/reviews/${review._id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -24,7 +27,7 @@ const Reviewcard = ({ review }) => {
   };
   return (
     <div className="flex justify-center">
-      <div className="card w-80 gap-4 shadow-xl">
+      <div className="card w-80 gap-4 shadow-xl shadow-pink-300">
         <div className="card-body">
           <h2 className="card-title">{displareview.customer}</h2>
           <p>rating :{displareview.rating}</p>
