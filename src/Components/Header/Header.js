@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Authcontext } from "../Context/Authprovide";
+import "./navbar.css";
 
 const Header = () => {
   const { logout } = useContext(Authcontext);
@@ -12,7 +13,7 @@ const Header = () => {
   };
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar h-32  ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,25 +37,48 @@ const Header = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <Link to="/blog">Blog</Link>
+              <Link className="mr-2" to="/login">
+                login
+              </Link>
+              <Link className="mr-2" to="/register">
+                Register
+              </Link>
+              <button className="mr-2" onClick={handlelogout}>
+                Logout
+              </button>
+              <Link className="mr-2" to="/allreview">
+                MyReview
+              </Link>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <Link to="/" className=" text-amber-900 font-bold text-xl">
+            Artsy Lens
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
-            <Link className="mr-2" to="/blog">
+            <Link className="mr-4 text-semibold text text-teal-800 " to="/blog">
               Blog
             </Link>
-            <Link className="mr-2" to="/login">
+            <Link className="mr-4 text-semibold text text-teal-800" to="/login">
               login
             </Link>
-            <Link className="mr-2" to="/register">
+            <Link
+              className="mr-4 text-semibold text text-teal-800"
+              to="/register"
+            >
               Register
             </Link>
-            <button className="mr-2" onClick={handlelogout}>
+            <button
+              className="mr-4 text-semibold text text-teal-800"
+              onClick={handlelogout}
+            >
               Logout
             </button>
-            <Link className="mr-2" to="/allreview">
+            <Link
+              className="mr-4 text-semibold text text-teal-800"
+              to="/allreview"
+            >
               MyReview
             </Link>
           </ul>

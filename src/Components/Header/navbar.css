@@ -1,0 +1,12 @@
+/* .navbar {
+  background-color: #f9cbf3;
+} */
+.text {
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.text:hover {
+  background-color: #f4acb7;
+}
