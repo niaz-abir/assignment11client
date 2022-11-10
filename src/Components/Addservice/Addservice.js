@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import FadeLoader from "react-spinners/FadeLoader";
 import useTitle from "../../hooks/usetitle";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from "react-hot-toast";
 
 const Addservice = () => {
   const [service, setservice] = useState([]);
   const [loading, setloaing] = useState(false);
   //   const notify = () => toast("Wow so easy!");
+  const notify = () => toast("Here is your toast.");
   useTitle("Service");
   useEffect(() => {
     setloaing(true);
@@ -38,10 +40,23 @@ const Addservice = () => {
       },
       body: JSON.stringify(newadd),
     })
-      .then((res) => res.json)
+      .then((res) => res.json())
       .then((data) => {
-        if (data.acknowledged > true) {
-          toast.success("added success");
+        if ((data.acknowledged = true)) {
+          //   toast.success("added success");
+          <div>
+            {" "}
+            <button onClick={notify}>Make me a toast</button>
+          </div>;
+
+          //   <div className="toast">
+          //     <div className="alert alert-info">
+          //       <div>
+          //         <span>New message arrived.</span>
+          //       </div>
+          //     </div>
+          //   </div>;
+          alert("you added a service");
           form.reset();
         }
       });
