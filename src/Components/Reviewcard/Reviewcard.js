@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Authcontext } from "../Context/Authprovide";
 import { Link } from "react-router-dom";
+import useTitle from "../../hooks/usetitle";
 
 const Reviewcard = ({ review }) => {
   const { user } = useContext(Authcontext);
+  useTitle("Review");
   const [displareview, setdisplayreview] = useState(review);
 
   const handledelte = (_id) => {

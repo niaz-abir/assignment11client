@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
 
 const Edite = () => {
   const storeuser = useLoaderData();
+  const navigate = useNavigate();
 
   //   const [user, setuser] = useState(storeuser);
 
@@ -13,6 +14,9 @@ const Edite = () => {
     const names = form.name.value;
     const rating = form.rating.value;
     const message = form.message.value;
+    form.reset();
+    navigate(-1);
+
     // console.log(names, rating, message);
 
     const newreview = {
@@ -37,7 +41,7 @@ const Edite = () => {
 
   return (
     <div>
-      <h1>Edit:{storeuser.customer}</h1>
+      {/* <h1>Edit:{storeuser.customer}</h1> */}
 
       <div className="hero  ">
         <div className="hero-content flex-col ">

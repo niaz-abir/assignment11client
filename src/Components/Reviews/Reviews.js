@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
+import useTitle from "../../hooks/usetitle";
 import { Authcontext } from "../Context/Authprovide";
 
 const Reviews = ({ _id }) => {
   const { user } = useContext(Authcontext);
+  useTitle("Review");
   const handlereview = (event) => {
     event.preventDefault();
     const form = event.target;

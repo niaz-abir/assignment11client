@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from "react";
+import FadeLoader from "react-spinners/FadeLoader";
+import useTitle from "../../hooks/usetitle";
 
 const Addservice = () => {
   const [service, setservice] = useState([]);
+  const [loading, setloaing] = useState(false);
+  useTitle("Service");
+  useEffect(() => {
+    setloaing(true);
+    setTimeout(() => {
+      setloaing(false);
+    }, 1000);
+  }, []);
 
   const handleadd = (event) => {
     event.preventDefault();
@@ -28,63 +38,72 @@ const Addservice = () => {
   };
   return (
     <div>
-      <div className="flex mx-auto justify-center w-1/2 lg:w-1/2">
-        <div className="w-3/4">
-          <form onSubmit={handleadd} className="card-body">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Name"
-                name="name"
-                className="input input-bordered"
-              />
-            </div>
+      {loading ? (
+        <FadeLoader
+          color={"#f4acb7"}
+          loading={loading}
+          className="flex  mx-auto"
+          size={60}
+        ></FadeLoader>
+      ) : (
+        <div className="flex mx-auto justify-center w-1/2 lg:w-1/2">
+          <div className="w-3/4">
+            <form onSubmit={handleadd} className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  name="name"
+                  className="input input-bordered"
+                />
+              </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">img</span>
-              </label>
-              <input
-                type="img"
-                placeholder="img"
-                name="img"
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">price</span>
-              </label>
-              <input
-                type="text"
-                placeholder="price"
-                name="price"
-                className="input input-bordered"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Details</span>
-              </label>
-              <input
-                type="details"
-                placeholder="details"
-                name="details"
-                className="input input-bordered"
-              />
-            </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">img</span>
+                </label>
+                <input
+                  type="img"
+                  placeholder="img"
+                  name="img"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">price</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="price"
+                  name="price"
+                  className="input input-bordered"
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Details</span>
+                </label>
+                <input
+                  type="details"
+                  placeholder="details"
+                  name="details"
+                  className="input input-bordered"
+                />
+              </div>
 
-            <div className="form-control mt-6 w-2/4 gap-4 flex mx-auto">
-              <button className="btn bg-purple-500 hover:bg-pink-500 border-0">
-                Submit
-              </button>
-            </div>
-          </form>
+              <div className="form-control mt-6 w-2/4 gap-4 flex mx-auto">
+                <button className="btn bg-purple-500 hover:bg-pink-500 border-0">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

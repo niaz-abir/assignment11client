@@ -4,7 +4,7 @@ import { Authcontext } from "../Context/Authprovide";
 import "./navbar.css";
 
 const Header = () => {
-  const { logout } = useContext(Authcontext);
+  const { logout, user } = useContext(Authcontext);
 
   const handlelogout = () => {
     logout()
@@ -60,33 +60,44 @@ const Header = () => {
             <Link className="mr-4 text-semibold text text-teal-800 " to="/blog">
               Blog
             </Link>
-            <Link className="mr-4 text-semibold text text-teal-800" to="/login">
-              login
-            </Link>
-            <Link
-              className="mr-4 text-semibold text text-teal-800"
-              to="/register"
-            >
-              Register
-            </Link>
-            <button
-              className="mr-4 text-semibold text text-teal-800"
-              onClick={handlelogout}
-            >
-              Logout
-            </button>
-            <Link
-              className="mr-4 text-semibold text text-teal-800"
-              to="/allreview"
-            >
-              MyReview
-            </Link>
-            <Link
-              className="mr-4 text-semibold text text-teal-800"
-              to="/addservice"
-            >
-              AddService
-            </Link>
+
+            {user ? (
+              <>
+                <Link
+                  className="mr-4 text-semibold text text-teal-800"
+                  to="/allreview"
+                >
+                  MyReview
+                </Link>
+                <Link
+                  className="mr-4 text-semibold text text-teal-800"
+                  to="/addservice"
+                >
+                  AddService
+                </Link>
+                <button
+                  className="mr-4 text-semibold text text-teal-800"
+                  onClick={handlelogout}
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  className="mr-4 text-semibold text text-teal-800"
+                  to="/login"
+                >
+                  login
+                </Link>
+                <Link
+                  className="mr-4 text-semibold text text-teal-800"
+                  to="/register"
+                >
+                  Register
+                </Link>
+              </>
+            )}
           </ul>
         </div>
         <div className="navbar-end">
