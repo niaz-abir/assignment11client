@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import FadeLoader from "react-spinners/FadeLoader";
 import useTitle from "../../hooks/usetitle";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Addservice = () => {
   const [service, setservice] = useState([]);
   const [loading, setloaing] = useState(false);
+  //   const notify = () => toast("Wow so easy!");
   useTitle("Service");
   useEffect(() => {
     setloaing(true);
@@ -34,7 +37,14 @@ const Addservice = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(newadd),
-    });
+    })
+      .then((res) => res.json)
+      .then((data) => {
+        if (data.acknowledged > true) {
+          toast.success("added success");
+          form.reset();
+        }
+      });
   };
   return (
     <div>

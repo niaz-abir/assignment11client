@@ -12,9 +12,9 @@ const Singleservice = ({ servic }) => {
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{name}</h2>
-          <p>upal theeke details splice kore ney</p>
+          <p>{details.slice(0, 50)}</p>
           <div className="card-actions">
-            <button className="btn btn-primary">View Details</button>
+            {/* <button className="btn btn-primary">View Details</button> */}
           </div>
         </div>
       </div>

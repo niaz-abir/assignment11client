@@ -14,6 +14,7 @@ import Reviews from "../../Components/Reviews/Reviews";
 import Servicedetails from "../../Components/Servicedetails/Servicedetails";
 
 import Main from "../../layout/Main";
+import Privateroute from "../Privateroute/Privateroute";
 
 export const routes = createBrowserRouter([
   {
@@ -28,11 +29,22 @@ export const routes = createBrowserRouter([
       { path: "/login", element: <Login></Login> },
       { path: "/register", element: <Register></Register> },
       { path: "/studio", element: <Studio></Studio> },
-      { path: "/addservice", element: <Addservice></Addservice> },
+      {
+        path: "/addservice",
+        element: (
+          <Privateroute>
+            <Addservice></Addservice>{" "}
+          </Privateroute>
+        ),
+      },
 
       {
         path: "/servicedetails/:id",
-        element: <Servicedetails></Servicedetails>,
+        element: (
+          <Privateroute>
+            <Servicedetails></Servicedetails>
+          </Privateroute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://assignment11-server-one.vercel.app/services/${params.id}`

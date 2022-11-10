@@ -2,9 +2,13 @@ import React, { useContext, useState } from "react";
 import { Authcontext } from "../Context/Authprovide";
 import { Link } from "react-router-dom";
 import useTitle from "../../hooks/usetitle";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Reviewcard = ({ review }) => {
   const { user } = useContext(Authcontext);
+  const notify = () => toast("Your item is Deleted");
+
   useTitle("Review");
   const [displareview, setdisplayreview] = useState(review);
 
@@ -19,6 +23,13 @@ const Reviewcard = ({ review }) => {
       )
         .then((res) => res.json())
         .then((data) => {
+          if (data.deletedCount > 0) {
+            // <div>
+            //   <button onClick={notify}>Notify!</button>
+            //   <ToastContainer />
+            // </div>;
+            toast.success("added success");
+          }
           console.log(data);
           const remaining = displareview.filter(
             (usr) => usr._id !== review._id

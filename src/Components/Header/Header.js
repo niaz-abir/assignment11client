@@ -36,19 +36,49 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <Link to="/blog">Blog</Link>
-              <Link className="mr-2" to="/login">
-                login
+              <Link
+                className="mr-4 text-semibold text text-teal-800"
+                to="/blog"
+              >
+                Blog
               </Link>
-              <Link className="mr-2" to="/register">
-                Register
-              </Link>
-              <button className="mr-2" onClick={handlelogout}>
-                Logout
-              </button>
-              <Link className="mr-2" to="/allreview">
-                MyReview
-              </Link>
+              {user ? (
+                <>
+                  <Link
+                    className="mr-4 text-semibold text text-teal-800"
+                    to="/allreview"
+                  >
+                    MyReview
+                  </Link>
+                  <Link
+                    className="mr-4 text-semibold text text-teal-800"
+                    to="/addservice"
+                  >
+                    AddService
+                  </Link>
+                  <Link
+                    className="mr-4 text-semibold text text-teal-800"
+                    onClick={handlelogout}
+                  >
+                    Logout
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link
+                    className="mr-4 text-semibold text text-teal-800"
+                    to="/login"
+                  >
+                    login
+                  </Link>
+                  <Link
+                    className="mr-4 text-semibold text text-teal-800"
+                    to="/register"
+                  >
+                    Register
+                  </Link>
+                </>
+              )}
             </ul>
           </div>
           <Link to="/" className=" text-amber-900 font-bold text-2xl">
@@ -101,7 +131,7 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Get started</a>
+          <a>...</a>
         </div>
       </div>
     </div>

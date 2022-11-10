@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Authcontext } from "../Context/Authprovide";
 import ClipLoader from "react-spinners/ClipLoader";
 import FadeLoader from "react-spinners/FadeLoader";
@@ -9,6 +9,11 @@ const Login = () => {
   const { login } = useContext(Authcontext);
   const [error, seterror] = useState();
   const [loading, setloaing] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
   useTitle("login");
 
   useEffect(() => {
@@ -28,6 +33,8 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
+        // navigate(-1);
       })
       .catch((error) => {
         console.error(error);

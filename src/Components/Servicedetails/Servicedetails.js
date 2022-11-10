@@ -8,7 +8,7 @@ const Servicedetails = () => {
   const { _id, name, details, img } = useLoaderData();
 
   return (
-    <div className="grid grid-cols-2 ml-8 mt-16">
+    <div className="grid grid-cols-1 lg:grid-cols-2 ml-8 mt-16">
       <div className="details  w-3/4 mt-16 ml-16">
         <img className=" w-40 rounded-lg" src={img} alt=""></img>
         <h1 className="text-4xl font-mono underline decoration-dotted p-4">
@@ -18,7 +18,7 @@ const Servicedetails = () => {
       </div>
 
       <div>
-        <div>
+        <div className="mt-4">
           <Reviews _id={_id}></Reviews>
         </div>
       </div>
